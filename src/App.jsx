@@ -118,9 +118,9 @@ const Hero = () => {
               AI Interview Trainer #1 di Indonesia
             </div>
             
-            <h1 className="text-6xl **md:text-6xl lg:text-7xl** font-black text-slate-900 leading-[0.95] mb-8 tracking-tight">
-                WAWANCARA? <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d84040] to-orange-600">SIAPA TAKUT.</span>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] mb-8 tracking-tight">
+              WAWANCARA? <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d84040] to-orange-600">SIAPA TAKUT.</span>
             </h1>
             
             <p className="text-xl text-slate-500 mb-10 leading-relaxed max-w-lg">
