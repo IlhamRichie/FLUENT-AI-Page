@@ -31,9 +31,14 @@ const Navbar = () => {
         className="pointer-events-auto w-full max-w-5xl bg-white/80 backdrop-blur-xl border border-white/50 shadow-2xl shadow-slate-200/50 rounded-full pl-6 pr-2 py-2 flex justify-between items-center"
       >
         {/* Logo Section */}
-        <div className="flex items-center gap-2">
-          <div className="w-9 h-9 bg-[#d84040] rounded-full flex items-center justify-center text-white shadow-lg shadow-red-200">
-             <MessageSquare size={18} fill="currentColor" />
+        <div className="flex items-center gap-3">
+          {/* Logo Gambar Transparan (Tanpa Background/Shadow) */}
+          <div className="w-10 h-10 flex items-center justify-center">
+             <img 
+               src="/logo.png" 
+               alt="Fluent AI Logo" 
+               className="w-full h-full object-contain" 
+             />
           </div>
           <span className="text-xl font-black text-slate-900 tracking-tight">FLUENT<span className="text-[#d84040]">.AI</span></span>
         </div>
@@ -91,6 +96,7 @@ const Navbar = () => {
 };
 
 const Hero = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   return (
     <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-[#F8F9FC]">
       {/* Background Shapes */}
@@ -130,9 +136,11 @@ const Hero = () => {
                 <Download size={24} />
                 Download APK
               </motion.button>
+              {/* Tombol Lihat Demo */}
               <motion.button 
                 whileHover={{ scale: 1.05, backgroundColor: '#fff' }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setIsVideoOpen(true)}
                 className="px-8 py-4 bg-white text-slate-900 border-2 border-slate-100 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:border-slate-300 transition-colors"
               >
                 <Play size={24} fill="currentColor" className="text-slate-900" />
@@ -166,7 +174,7 @@ const Hero = () => {
               <div className="bg-slate-800 rounded-[2.2rem] overflow-hidden h-[600px] relative">
                 {/* Simulated App UI */}
                 <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="/image.png"
                   alt="Candidate" 
                   className="w-full h-full object-cover opacity-90" 
                 />
@@ -244,6 +252,45 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+      {/* Video Modal Overlay */}
+      <AnimatePresence>
+        {isVideoOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setIsVideoOpen(false)}
+          >
+            <motion.div 
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              className="relative w-full max-w-4xl bg-black rounded-3xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Tombol Close */}
+              <button 
+                onClick={() => setIsVideoOpen(false)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors"
+              >
+                <X size={20} />
+              </button>
+
+              {/* Video Player */}
+              <video 
+                src="/demo-video.mp4" /* GANTI INI DENGAN NAMA FILE VIDEO KAMU DI FOLDER PUBLIC */
+                autoPlay 
+                loop 
+                muted 
+                controls 
+                playsInline
+                className="w-full h-auto max-h-[80vh] object-contain"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
