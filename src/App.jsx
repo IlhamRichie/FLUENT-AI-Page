@@ -33,6 +33,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Fitur', href: '#fitur' },
     { name: 'Cara Kerja', href: '#cara-kerja' },
+    { name: 'Harga', href: '#harga' },
     { name: 'Testimoni', href: '#testimoni' },
   ];
 
@@ -446,6 +447,114 @@ const FeatureBento = () => {
                 <p className="text-slate-600">Naikkan level dari 'Intern' ke 'CEO' dengan latihan rutin.</p>
               </div>
             </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// --- NEW PRICING SECTION ---
+const Pricing = () => {
+  return (
+    <section className="py-24 bg-[#FFF5F5]" id="harga">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          <span className="text-amber-500 font-bold tracking-wider text-sm uppercase bg-amber-50 px-3 py-1 rounded-full border border-amber-100">
+            Upgrade Karirmu
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-4 mb-6">Investasi Kecil, <br/> Hasil Maksimal.</h2>
+          <p className="text-slate-600 text-lg">Pilih paket yang sesuai dengan kebutuhan persiapan karirmu. Mulai dari gratis hingga akses tanpa batas.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
+          
+          {/* Free Plan */}
+          <motion.div 
+            whileHover={{ y: -5 }}
+            className="p-8 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden"
+          >
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">Starter (Gratis)</h3>
+              <p className="text-slate-500 mb-6">Cukup untuk pemanasan.</p>
+              <div className="text-4xl font-black text-slate-900 mb-8">Rp 0 <span className="text-lg font-medium text-slate-400">/ selamanya</span></div>
+              
+              <ul className="space-y-4 mb-8">
+                {[
+                  "1x Latihan Interview / Hari",
+                  "Akses Topik Dasar (HR)",
+                  "Feedback AI Standar",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-slate-600">
+                    <CheckCircle2 size={20} className="text-slate-300" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full py-4 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition-colors">
+                Mulai Gratis
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Premium Plan - Highlighted */}
+          <motion.div 
+            whileHover={{ y: -10 }}
+            className="p-1 bg-gradient-to-br from-amber-300 via-yellow-400 to-orange-400 rounded-[2.6rem] shadow-2xl shadow-orange-200/50 relative"
+          >
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-1 rounded-b-xl text-sm font-bold shadow-sm z-20">
+              PALING LARIS 🔥
+            </div>
+            
+            <div className="bg-white rounded-[2.5rem] p-8 h-full relative overflow-hidden">
+               {/* Background Decor */}
+               <div className="absolute top-0 right-0 w-64 h-64 bg-amber-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50" />
+               
+               <div className="relative z-10">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        Premium <Diamond size={20} className="text-amber-500 fill-amber-500" />
+                      </h3>
+                      <p className="text-amber-600 font-medium">Latihan tanpa batas.</p>
+                    </div>
+                  </div>
+
+                  <div className="text-5xl font-black text-slate-900 mb-2">Rp 30.000</div>
+                  <p className="text-slate-400 mb-8 font-medium">per bulan</p>
+                  
+                  <div className="bg-amber-50 rounded-2xl p-6 border border-amber-100 mb-8">
+                    <ul className="space-y-4">
+                      {[
+                        "✅ 7x Latihan Interview / Hari",
+                        "✅ Bebas Akses Semua Topik",
+                        "✅ Feedback AI Lebih Detail",
+                        "✅ Analisis Emosi Wajah Full",
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 text-slate-800 font-medium">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <button className="w-full py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-200 hover:shadow-xl hover:scale-[1.02] transition-all">
+                      Upgrade Sekarang
+                    </button>
+                    
+                    <div className="flex items-center justify-center gap-2 text-sm text-slate-500">
+                      <Mail size={16} />
+                      <span>Aktivasi: </span>
+                      <a href="mailto:tim2capstone2@gmail.com" className="font-bold text-slate-900 hover:text-amber-600 underline decoration-amber-200 decoration-2 underline-offset-2">
+                        tim2capstone2@gmail.com
+                      </a>
+                    </div>
+                  </div>
+               </div>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
