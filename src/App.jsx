@@ -23,7 +23,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Link download aplikasi
-  const downloadLink = "https://appdistribution.firebase.dev/i/f7c4928321c30dd7";
+  const downloadLink = "https://appdistribution.firebase.dev/i/75b1e354f65ff1b2";
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 flex justify-center pt-6 px-4 pointer-events-none">
@@ -103,7 +103,7 @@ const Navbar = () => {
 
 const Hero = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const downloadLink = "https://appdistribution.firebase.dev/i/f7c4928321c30dd7";
+  const downloadLink = "https://appdistribution.firebase.dev/i/75b1e354f65ff1b2";
 
   return (
     <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-[#F8F9FC]">
@@ -407,7 +407,7 @@ const FeatureBento = () => {
 
 // --- PRICING SECTION ---
 const Pricing = () => {
-  const downloadLink = "https://appdistribution.firebase.dev/i/f7c4928321c30dd7";
+  const downloadLink = "https://appdistribution.firebase.dev/i/75b1e354f65ff1b2";
 
   return (
     <section className="py-24 bg-[#FFF5F5]" id="harga">
@@ -604,7 +604,7 @@ const Testimonials = () => {
 };
 
 const Footer = () => {
-  const downloadLink = "https://appdistribution.firebase.dev/i/f7c4928321c30dd7";
+  const downloadLink = "https://appdistribution.firebase.dev/i/75b1e354f65ff1b2";
 
   return (
     <footer className="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
